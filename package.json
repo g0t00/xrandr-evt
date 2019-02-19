@@ -1,11 +1,12 @@
 {
-  "name": "xrandr-evt",
+  "name": "@g0t00/xrandr-evt",
   "version": "0.1.0",
   "description": "xrandr evt",
   "main": "index.js",
   "scripts": {
-    "start": "node-gyp configure build && node uvtest.js",
-    "test": "node test.js"
+    "start": "node-gyp configure build && node index.js",
+    "test": "node test.js",
+    "install": "node-gyp rebuild"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,12 @@
   "author": "Anton Schulte <mail@anton-schulte.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/schahriar/n-api-article/issues"
+    "url": "https://github.com/g0t00/xrandr-evt/issues"
   },
-  "homepage": "https://github.com/schahriar/n-api-article#readme",
+  "homepage": "https://github.com/g0t00/xrandr-evt",
   "dependencies": {
     "bindings": "^1.4.0"
-  }
+  },
+  "gypfile": true,
+  "devDependencies": {}
 }
