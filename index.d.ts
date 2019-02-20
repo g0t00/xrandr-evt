@@ -1,5 +1,5 @@
 declare module 'xrandr-evt' {
-  import { EventEmitter }                           = require('events');
+  import { EventEmitter }                           from 'events';
 
   function createEmiiter(): EventEmitter;
   let numberOfGreetings: number;

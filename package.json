@@ -1,6 +1,6 @@
 {
   "name": "@g0t00/xrandr-evt",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "xrandr evt",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/g0t00/xrandr-evt.git"
   },
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=10.10.0"
   },
   "author": "Anton Schulte <mail@anton-schulte.de>",
   "license": "MIT",
