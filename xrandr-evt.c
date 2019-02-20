@@ -1,3 +1,5 @@
+#define NAPI_EXPERIMENTAL
+
 #include <node_api.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -26,7 +28,7 @@ void *thread(void *args) {
         xcb_window_t window;
         xcb_generic_event_t* evt;
         xcb_randr_screen_change_notify_event_t* randr_evt;
-        xcb_timestamp_t last_time;
+        xcb_timestamp_t last_time = 0;
         int monitor_connected = 1;
 
         conn = xcb_connect(NULL, NULL);
@@ -49,8 +51,9 @@ void *thread(void *args) {
                 free(evt);
         }
         xcb_disconnect(conn);
-}
-void *call_js_cb(napi_env env,
+        return NULL;
+      }
+void call_js_cb(napi_env env,
                  napi_value js_callback,
                  void* context,
                  void* data) {
@@ -64,7 +67,6 @@ void *call_js_cb(napi_env env,
 
         status = napi_call_function(env, global, js_callback, 1, &element, NULL);
         if (status != napi_ok) printf("Failed to napi_call_function");
-
 }
 
 napi_value callEmit (napi_env env, napi_callback_info info) {
@@ -91,7 +93,6 @@ napi_value callEmit (napi_env env, napi_callback_info info) {
                                  "testResource",
                                  NAPI_AUTO_LENGTH,
                                  &resource);
-        napi_threadsafe_function function;
         threadParameter_t *params = (threadParameter_t *)malloc(sizeof(threadParameter_t));
         params->function = malloc(sizeof(napi_threadsafe_function));
         status = napi_create_threadsafe_function(env,
