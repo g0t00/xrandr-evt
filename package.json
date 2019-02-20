@@ -1,6 +1,6 @@
 {
   "name": "@g0t00/xrandr-evt",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "xrandr evt",
   "main": "index.js",
   "scripts": {
