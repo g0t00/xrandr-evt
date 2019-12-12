@@ -8,3 +8,6 @@ exports.getEmitter = function() {
   uvtest.callEmit(emitter.emit.bind(emitter))
   return emitter;
 };
+exports.changeX = function (windowId, x) {
+  uvtest.changeX(windowId, x);
+};

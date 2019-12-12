@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.do": "tcl",
+    "*.qip": "tcl",
+    "*.php3": "php",
+    "i3config": "i3",
+    "xcb.h": "c",
+    "uv.h": "c",
+    "randr.h": "c"
+  }
+}
